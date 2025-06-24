@@ -1,4 +1,4 @@
-// all inputs
+
 var signupName = document.getElementById('signupName')
 var signupEmail = document.getElementById('signupEmail')
 var signupPassword = document.getElementById('signupPassword')
@@ -27,8 +27,6 @@ if (localStorage.getItem('users') == null) {
 
 
 
-
-//for check inputs is empty or not
 function isEmpty() {
 
     if (signupName.value == "" || signupEmail.value == "" || signupPassword.value == "") {
@@ -42,7 +40,6 @@ function isEmpty() {
 
 
 
-// for check email is exist
 function isEmailExist() {
     for (var i = 0; i < signUpArray.length; i++) {
         if (signUpArray[i].email.toLowerCase() == signupEmail.value.toLowerCase()) {
@@ -60,7 +57,7 @@ function signUp() {
         document.getElementById('exist').innerHTML = '<span class="text-danger m-3">All inputs is required</span>'
         return false
     }
-    // to store all value as object
+   
     var signUp = {
         name: signupName.value,
         email: signupEmail.value,
@@ -88,8 +85,7 @@ function signUp() {
 
 
 
-// ============= for login================
-//for check inputs is empty or not
+
 function isLoginEmpty() {
 
     if (signinPassword.value == "" || signinEmail.value == "") {
@@ -124,9 +120,6 @@ function login() {
 }
 
 
-
-
-// for logout
 function logout() {
     localStorage.removeItem('sessionUsername')
 }
